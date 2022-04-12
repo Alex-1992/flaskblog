@@ -38,7 +38,7 @@ class BaseConfig(object):
     # MAIL_PASSWORD = 'yyF1992.'
     MAIL_PASSWORD = 'skcijtxzoiuqdgjg'
     MAIL_DEFAULT_SENDER = ('Bluelog Admin', MAIL_USERNAME)
-    MAIL_SUPPRESS_SEND = True #测试时不需要真的发送邮件
+    MAIL_SUPPRESS_SEND = False  # 测试时不需要真的发送邮件
 
     BLUELOG_EMAIL = os.getenv('BLUELOG_EMAIL') or '1952889796@qq.com'
     BLUELOG_POST_PER_PAGE = 7

@@ -51,11 +51,12 @@ class CategoryForm(FlaskForm):
 
 
 class CommentForm(FlaskForm):
-    author = StringField('Name*', validators=[DataRequired(), Length(1, 30)])
+    author = StringField('Name *', validators=[DataRequired(), Length(1, 30)])
     # email = StringField('Email*', validators=[DataRequired(), Email(), Length(1, 254)])
-    email = StringField('Email*', validators=[DataRequired(), Length(1, 254)],default='如果你的评论被回复，你将收到一封提醒邮件')
+    email = StringField('Email (如果你的评论被回复，将会有提醒邮件发送到此邮箱)'
+                        , validators=[Optional(), Email(), Length(0, 254)], default='')
     site = StringField('Site', validators=[Optional(), URL(), Length(0, 255)])
-    body = TextAreaField('Comment*', validators=[DataRequired()])
+    body = TextAreaField('Comment *', validators=[DataRequired()])
     submit = SubmitField()
 
 

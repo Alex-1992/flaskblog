@@ -133,7 +133,7 @@ def approve_comment(comment_id):
     comment = Comment.query.get_or_404(comment_id)
     comment.reviewed = True
     db.session.commit()
-    flash('Comment published.', 'success')
+    # flash('Comment published.', 'success')
     return redirect_back()
 
 
