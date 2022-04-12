@@ -1,5 +1,15 @@
 nav {
-    margin-bottom: 20px;
+
+    /*padding: 0px!important;*/
+    padding-top: 0.5% !important;
+    padding-bottom: 0.5% !important;
+    line-height: normal;
+    font-size: larger;
+
+
+    /*    border: 0;*/
+    /*height: 1px;*/
+    /*background: black linear-gradient(to right, black, #333, black);*/
 }
 
 img {
@@ -12,8 +22,8 @@ img {
 }
 
 .page-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    /*padding-top: 20px;*/
+    /*padding-bottom: 20px;*/
     margin-right: 10%;
 }
 
@@ -37,7 +47,8 @@ footer {
 }
 
 .page-footer {
-    padding-top: 40px;
+    margin-top: 40px;
+    /*background-color: red!important;*/
 }
 
 .tip { /* from github.com */
@@ -51,31 +62,91 @@ footer {
     box-shadow: inset 0 0 10px rgba(27, 31, 35, 0.05);
 }
 
-.bg-primary {
-    /*background-color: #00bc8c !important;*/
-    background-color:black !important;
-    /*color: red !important;*/
-}
+/*.bg-primary {*/
+/*    !*background-color: #00bc8c !important;*!*/
+/*    background-color:black !important;*/
+/*}*/
 
-.collapse{
-    font-size: x-large;
-}
+/*.collapse{*/
+/*    font-size: x-large;*/
+/*}*/
 
 .col-sm-8,.col-sm-4{
-    margin-top: 3%;
-}{
     margin-top: 3%;
 }
 
 a:hover{ color:#37ede0 }
 
-.page-link,.page-item{
-    background-color: black !important;
-    color: cornflowerblue !important;
+/*.page-link,.page-item{*/
+/*    background-color: black !important;*/
+/*    color: cornflowerblue !important;*/
+/*}*/
+
+
+
+hr.post_spliter{
+    /*background-color: #9fcdff;*/
+    background-color: whitesmoke;
 }
 
-.page-link:hover{
-    color:#37ede0
-    /*background-color: black !important;*/
+.hr-solid-content{
+    padding-top: 1.5% !important;
+    padding-bottom: 1.5% !important;
+    /*margin-top: 0.5% !important;*/
+    margin-bottom: 0 !important;
+    /*color: #a2a9b6;*/
+    color: #6495ed;
+    border: 0;
+    font-size: 12px;
+    padding: 1em 0;
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+
+    border: 0;
+    height: 1px;
+    /*background: black linear-gradient(to right, black, #333, black);*/
+}
+.hr-solid-content::before {
+    content: attr(data-content);
+    position: absolute;
+    padding: 0 1ch;
+    line-height: 1px;
+    border: solid #6495ed;
+    border-width: 0 99vw;
+    width: fit-content;
+    /* for IE浏览器 */
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-link:hover {
+    text-decoration: none;
+    background-color: #37ede0!important;
+}
+.page-link{
+    color:whitesmoke;
+    background-color: #6495ed !important;
     /*color: cornflowerblue !important;*/
+}
+
+.bottom-block{
+    float: outside;
+    background-color: black;
+    /*padding-top: 0.5% !important;*/
+    /*padding-bottom: 0.5% !important;*/
+    overflow: visible;
+}
+
+/*.pagination{*/
+/*    background-color: red;*/
+/*    margin-bottom: 0;*/
+/*}*/
+.nav[aria-label="Page navigation"]{
+    background-color: red!important;
+}
+
+.change-color{
+    background: black linear-gradient(to right, black, #333, black);
 }

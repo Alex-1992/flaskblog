@@ -1,6 +1,9 @@
 {% if posts %}
     {% for post in posts %}
-        <h3 class="text-primary"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a></h3>
+{#        {%  if loop.first %}#}
+{#            <hr class="post_spliter">#}
+{#        {% endif %}#}
+        <h4 class="text-primary"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a></h4>
         <p>
             {{ post.body|striptags|truncate }}
             <small><a href="{{ url_for('.show_post', post_id=post.id) }}">Read More</a></small>
@@ -12,7 +15,8 @@
             <span class="float-right">{{ moment(post.timestamp).format('LL') }}</span>
         </small>
         {% if not loop.last %}
-            <hr>
+{#            <hr color="cornflowerblue">#}
+            <hr class="post_spliter">
         {% endif %}
     {% endfor %}
 {% else %}

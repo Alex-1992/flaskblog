@@ -31,9 +31,9 @@ def about():
     return render_template('blog/about.html')
 
 
-@blog_bp.route('/github')
-def github():
-    return redirect("https://github.com/Alex-1992")
+# @blog_bp.route('/github')
+# def github():
+#     return redirect("https://github.com/Alex-1992")
 
 
 @blog_bp.route('/category/<int:category_id>')

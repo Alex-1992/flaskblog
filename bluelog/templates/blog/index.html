@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% from 'bootstrap/pagination.html' import render_pager %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
 
 {% block title %}Home{% endblock %}
 
@@ -12,11 +13,22 @@
         <div class="col-sm-8">
             {% include 'blog/_posts.html' %}
             {% if posts %}
-                <div class="page-footer" >{{ render_pager(pagination) }}</div>
+{#                <div class="page-footer" >{{ render_pager(pagination,prev='<<PRE',next='NEXT>>') }}</div>#}
+                <div class="page-footer" >{{ render_pager(pagination,prev='<<Pre',next='Next>>',_class='page_nav') }}</div>
             {% endif %}
         </div>
         <div class="col-sm-4 sidebar">
             {% include 'blog/_sidebar.html' %}
         </div>
     </div>
+{#    <div>#}
+{#        <hr style="background-color: blue" data-content="!!!!!!">#}
+{#    </div>#}
+
+{#    <hr style="color: red">#}
 {% endblock %}
+{#{% block footer %}#}
+{#<div>#}
+{#        <hr style="color: red" data-content="到我的底线了">#}
+{#    </div>#}
+{#{%  endblock %}#}
