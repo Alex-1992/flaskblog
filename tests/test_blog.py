@@ -42,16 +42,16 @@ class BlogTestCase(BaseTestCase):
         self.assertIn('Hello Post', data)
         self.assertIn('A comment', data)
 
-    def test_change_theme(self):
-        response = self.client.get(url_for('blog.change_theme', theme_name='perfect_blue'), follow_redirects=True)
-        data = response.get_data(as_text=True)
-        self.assertIn('css/perfect_blue.min.css', data)
-        self.assertNotIn('css/black_swan.min.css', data)
-
-        response = self.client.get(url_for('blog.change_theme', theme_name='black_swan'), follow_redirects=True)
-        data = response.get_data(as_text=True)
-        self.assertIn('css/black_swan.min.css', data)
-        self.assertNotIn('css/perfect_blue.min.css', data)
+    # def test_change_theme(self):
+    #     response = self.client.get(url_for('blog.change_theme', theme_name='perfect_blue'), follow_redirects=True)
+    #     data = response.get_data(as_text=True)
+    #     self.assertIn('css/perfect_blue.min.css', data)
+    #     self.assertNotIn('css/black_swan.min.css', data)
+    #
+    #     response = self.client.get(url_for('blog.change_theme', theme_name='black_swan'), follow_redirects=True)
+    #     data = response.get_data(as_text=True)
+    #     self.assertIn('css/black_swan.min.css', data)
+    #     self.assertNotIn('css/perfect_blue.min.css', data)
 
     def test_about_page(self):
         response = self.client.get(url_for('blog.about'))
