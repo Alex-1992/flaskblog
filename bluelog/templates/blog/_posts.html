@@ -6,7 +6,7 @@
         <h4 class="text-primary"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a></h4>
         <p>
             {{ post.body|striptags|truncate }}
-            <small><a href="{{ url_for('.show_post', post_id=post.id) }}">Read More</a></small>
+            <small><a href="{{ url_for('.show_post', post_id=post.id) }}">更多</a></small>
         </p>
         <small>
             Comments: <a href="{{ url_for('.show_post', post_id=post.id) }}#comments">{{ post.comments|length }}</a>&nbsp;&nbsp;

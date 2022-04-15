@@ -139,9 +139,7 @@ hr.post_spliter {
 
 .bottom-block {
     float: outside;
-    background-color: black;
-    /*padding-top: 0.5% !important;*/
-    /*padding-bottom: 0.5% !important;*/
+    /*background-color: black;*/
     overflow: visible;
 }
 
@@ -153,4 +151,12 @@ hr.post_spliter {
 * {
     /*letter-spacing: 0.1rem;*/
     word-spacing: 0.15rem !important;
+}
+
+.nav-link{
+    color: whitesmoke !important;
+}
+
+.nav-link:hover {
+    color: #37ede0 !important;
 }
