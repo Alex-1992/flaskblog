@@ -91,7 +91,7 @@ $ docker run -it -p 80:80  flaskblog:dev
  
 *username为你在dockerhub注册的账号*
  
-tag表示将本地flaskblog:dev 与远程仓库 username/flaskblog:dev 关
+tag表示将本地flaskblog:dev 与远程仓库 username/flaskblog:dev 关联
 ```
 $ docker tag flaskblog:dev username/flaskblog:dev
 ```
@@ -124,3 +124,6 @@ $ docker ps
 ```
 $ docker run -itd -p 80:80  username/flaskblog:dev
 ```
+至此博客已经通过docker镜像部署到服务器了。
+
+还可以为你的博客添加nginx代理和高性能的web服务器gunicorn。
