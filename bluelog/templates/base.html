@@ -94,11 +94,13 @@
     {% block content %}{% endblock content %}
 
 </main>
-
+</body>
 {% block footer %}
+{#    <footer>#}
            <div class="bottom-block">
-               <hr  class="hr-solid-content" data-content="到我的底线了">
+               <hr  class="hr-solid-content" data-content="到底了">
            </div>
+{#    </footer>#}
 {#        <footer>#}
 {#            <p class="float-left">#}
 {#                <small> &copy; 2018 <a href="http://greyli.com" title="Written by Grey Li">Grey Li</a> -#}
@@ -128,7 +130,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
     {{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
 {% endblock %}
-</body>
+
 {#{% block footer %}#}
 {#           <div class="bottom-block">#}
 {#               <hr  class="hr-solid-content" data-content="到我的底线了">#}
