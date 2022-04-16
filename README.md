@@ -1,7 +1,7 @@
 # flaskblog
 *使用flask搭建的个人博客并使用docker部署*
 
-样例: youyangfan.work
+样例  <http://www.youyangfan.work>
 
 博客头部：
 ![img.png](uploads/img.png)
