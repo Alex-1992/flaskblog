@@ -2,7 +2,11 @@
 *使用flask搭建的个人博客并使用docker部署*
 
 样例: youyangfan.work
-![img_2.png](uploads/img_2.png)
+
+博客头部：
+![img.png](uploads/img.png)
+博客底部：
+![img_1.png](uploads/img_1.png)
 ### 此文分为安装和部署两部分
 ## 1.安装：
 clone:
@@ -62,6 +66,7 @@ SQLALCHEMY_DATABASE_URI = 数据库名+连接引擎://用户名:密码@数据库
 ## 2.部署：
 ### 本地：
 切换至项目根目录，根据dockerfile创建本地镜像：
+
 *-t 指定镜像名和标签*
  
 *. 表示用当前目录下的dockerfile创建镜像*

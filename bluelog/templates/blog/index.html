@@ -14,21 +14,11 @@
             {% include 'blog/_posts.html' %}
             {% if posts %}
 {#                <div class="page-footer" >{{ render_pager(pagination,prev='<<PRE',next='NEXT>>') }}</div>#}
-                <div class="page-footer" >{{ render_pager(pagination,prev='<<Pre',next='Next>>') }}</div>
+                <div class="page-footer" >{{ render_pager(pagination,prev='<<上一页',next='下一页>>') }}</div>
             {% endif %}
         </div>
         <div class="col-sm-4 sidebar">
             {% include 'blog/_sidebar.html' %}
         </div>
     </div>
-{#    <div>#}
-{#        <hr style="background-color: blue" data-content="!!!!!!">#}
-{#    </div>#}
-
-{#    <hr style="color: red">#}
 {% endblock %}
-{#{% block footer %}#}
-{#<div>#}
-{#        <hr style="color: red" data-content="到我的底线了">#}
-{#    </div>#}
-{#{%  endblock %}#}

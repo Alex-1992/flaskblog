@@ -8,15 +8,15 @@ from sqlalchemy.exc import IntegrityError
 from bluelog.extensions import db
 from bluelog.models import Admin, Category, Post, Comment, Link
 
-fake = Faker()
+fake = Faker('zh-CN')
 
 
 def fake_admin():
     admin = Admin(
         username='admin',
-        blog_title='Flaskblog',
-        blog_sub_title="Technology makes life better.",
-        name='Alex',
+        blog_title='yyf的博客',
+        blog_sub_title="天涯路远，见字如面",
+        name='youyangfan',
         about='A blog made with flask'
     )
     admin.set_password('admin')
@@ -25,7 +25,7 @@ def fake_admin():
 
 
 def fake_categories(count=10):
-    category = Category(name='Default')
+    category = Category(name='默认分类')
     db.session.add(category)
 
     for i in range(count):
@@ -108,9 +108,7 @@ def fake_comments(count=500):
 
 
 def fake_links():
-    twitter = Link(name='Twitter', url='#')
-    facebook = Link(name='Facebook', url='#')
-    linkedin = Link(name='LinkedIn', url='#')
-    google = Link(name='Google+', url='#')
-    db.session.add_all([twitter, facebook, linkedin, google])
+    github = Link(name='GitHub', url='#')
+    email = Link(name='邮箱', url='#')
+    db.session.add_all([github, email])
     db.session.commit()

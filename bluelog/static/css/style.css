@@ -149,7 +149,7 @@ hr.post_spliter {
 }
 
 * {
-    /*letter-spacing: 0.1rem;*/
+    letter-spacing: 0.05rem;
     word-spacing: 0.15rem !important;
 }
 
