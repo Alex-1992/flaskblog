@@ -30,7 +30,35 @@ $ flask run
 ```
 测试账号:
 * username: `admin`
-* password: `helloflask`
+* password: `admin`
+
+博客的邮件系统需要私人smtp账户信息，想要使用完整的邮件功能，
+
+还需要在根目录下创建一个 .env 文件，写入如下信息：
+
+```
+# 程序秘钥，一个随机字符串
+SECRET_KEY = youyangfan
+
+# 自己的smtp账户信息
+MAIL_SERVER = smtp服务器地址
+MAIL_USERNAME = 自己的smtp账号
+MAIL_PASSWORD = 密码(有的网站需要提供授权码)
+```
+
+程序默认为开发环境，使用sqlite存储数据，生产环境下优先从环境变量读取数据库URI，
+
+建议使用更健壮的DBMS如MySQL，这需要在 .flaskenv 文件中修改生产环境变量
+
+并在 .env 文件中写入数据库URI
+
+```
+# .flaskenv中
+FLASK_ENV = production
+
+# .env中
+SQLALCHEMY_DATABASE_URI = 数据库名+连接引擎://用户名:密码@数据库路径
+```
 ## 2.部署：
 ### 本地：
 切换至项目根目录，根据dockerfile创建本地镜像：
@@ -72,6 +100,7 @@ $ docker push username/flaskblog:dev
 ```
 ### 服务器：
 安装docker，不同服务器安装方式不同，这里略过
+ 
 从dockerhub拉取远程仓库镜像
 ```
 $ docker pull username/flaskblog:dev
@@ -85,6 +114,7 @@ $ docker run -it -p 80:80  username/flaskblog:dev
 $ docker ps
 ```
 生产环境以后台方式运行docker镜像：
+ 
 *-d 表示以守护进程的方式在后台运行*
 ```
 $ docker run -itd -p 80:80  username/flaskblog:dev

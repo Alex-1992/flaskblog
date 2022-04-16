@@ -19,7 +19,7 @@ def fake_admin():
         name='Alex',
         about='A blog made with flask'
     )
-    admin.set_password('helloflask')
+    admin.set_password('admin')
     db.session.add(admin)
     db.session.commit()
 
