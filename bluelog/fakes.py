@@ -14,10 +14,10 @@ fake = Faker()
 def fake_admin():
     admin = Admin(
         username='admin',
-        blog_title='Bluelog',
-        blog_sub_title="No, I'm the real thing.",
-        name='Mima Kirigoe',
-        about='Um, l, Mima Kirigoe, had a fun time as a member of CHAM...'
+        blog_title='Flaskblog',
+        blog_sub_title="Technology makes life better.",
+        name='Alex',
+        about='A blog made with flask'
     )
     admin.set_password('helloflask')
     db.session.add(admin)
