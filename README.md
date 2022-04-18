@@ -1,14 +1,14 @@
 # flaskblog
 *使用flask搭建的个人博客并使用docker部署*
 
-样例  <http://www.youyangfan.work>
+样例：[youyangfan.work](http://124.221.180.146/)
 
 博客头部：
 ![img.png](uploads/img.png)
 博客底部：
 ![img_1.png](uploads/img_1.png)
-### 此文分为安装和部署两部分
-## 1.安装：
+## 此文分为安装和部署两部分
+### 1.安装：
 clone:
 ```
 $ git clone git@github.com:Alex-1992/flaskblog.git
@@ -63,8 +63,8 @@ FLASK_ENV = production
 # .env中
 SQLALCHEMY_DATABASE_URI = 数据库名+连接引擎://用户名:密码@数据库路径
 ```
-## 2.部署：
-### 本地：
+### 2.部署：
+#### 本地：
 切换至项目根目录，根据dockerfile创建本地镜像：
 
 *-t 指定镜像名和标签*
@@ -103,7 +103,8 @@ $ docker login
 ```
 $ docker push username/flaskblog:dev
 ```
-### 服务器：
+
+#### 服务器：
 安装docker，不同服务器安装方式不同，这里略过
  
 从dockerhub拉取远程仓库镜像
@@ -126,4 +127,4 @@ $ docker run -itd -p 80:80  username/flaskblog:dev
 ```
 至此博客已经通过docker镜像部署到服务器了。
 
-还可以为你的博客添加nginx代理和高性能的web服务器gunicorn。
+还可以为博客添加nginx代理和高性能的web服务器gunicorn。

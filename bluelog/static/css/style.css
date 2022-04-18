@@ -18,7 +18,7 @@ img {
 }
 
 .page-header {
-    /*padding-top: 20px;*/
+    margin-top: 3%;
     /*padding-bottom: 20px;*/
     margin-right: 10%;
 }
@@ -58,15 +58,6 @@ footer {
     box-shadow: inset 0 0 10px rgba(27, 31, 35, 0.05);
 }
 
-/*.bg-primary {*/
-/*    !*background-color: #00bc8c !important;*!*/
-/*    background-color:black !important;*/
-/*}*/
-
-/*.collapse{*/
-/*    font-size: x-large;*/
-/*}*/
-
 .col-sm-8, .col-sm-4 {
     margin-top: 3%;
 }
@@ -83,7 +74,7 @@ hr.post_spliter {
 
 .hr-solid-content {
     padding-top: 1.5% !important;
-    padding-bottom: 1.5% !important;
+    padding-bottom: 1% !important;
     margin-bottom: 0 !important;
     /*color: #a2a9b6;*/
     color: #6495ed;
@@ -129,13 +120,6 @@ hr.post_spliter {
     background-color: #6495ed !important;
 }
 
-/*.page-item.disabled .page-link {*/
-/*    color: #fff;*/
-/*    pointer-events: none;*/
-/*    cursor: auto;*/
-/*    background-color: #007053;*/
-/*    border-color: transparent;*/
-/*}*/
 
 .bottom-block {
     float: outside;
@@ -163,4 +147,9 @@ hr.post_spliter {
 
 .col-sm-8{
     min-height: 50rem;
+}
+
+.icp-link{
+    text-align: center;
+    font-size: 12px;
 }

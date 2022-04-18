@@ -5,15 +5,10 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{#    <div class="page-header">#}
-{#        <h1 class="display-3">{{ admin.blog_title|default('Blog Title') }}</h1>#}
-{#        <h4 class="text-muted">&nbsp;{{ admin.blog_sub_title|default('Blog Subtitle') }}</h4>#}
-{#    </div>#}
     <div class="row">
         <div class="col-sm-8">
             {% include 'blog/_posts.html' %}
             {% if posts %}
-{#                <div class="page-footer" >{{ render_pager(pagination,prev='<<PRE',next='NEXT>>') }}</div>#}
                 <div class="page-footer" >{{ render_pager(pagination,prev='<<上一页',next='下一页>>') }}</div>
             {% endif %}
         </div>
@@ -21,4 +16,12 @@
             {% include 'blog/_sidebar.html' %}
         </div>
     </div>
+{% endblock %}
+
+{% block footer %}
+    {{ super() }}
+    <div class="icp-link">
+        <a href="https://beian.miit.gov.cn">陕ICP备2020004273号</a>
+    </div>
+
 {% endblock %}
