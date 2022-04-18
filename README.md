@@ -91,7 +91,7 @@ $ docker run -it -p 80:80  flaskblog:dev
  
 *username为你在dockerhub注册的账号*
  
-tag表示将本地flaskblog:dev 与远程仓库 username/flaskblog:dev 关联
+*tag表示将本地flaskblog:dev 与远程仓库 username/flaskblog:dev 关联*
 ```
 $ docker tag flaskblog:dev username/flaskblog:dev
 ```

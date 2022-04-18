@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from flask_ckeditor import CKEditorField
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, TextAreaField, ValidationError, HiddenField, \
-    BooleanField, PasswordField
+    BooleanField, PasswordField, DateField
 from wtforms.validators import DataRequired, Email, Length, Optional, URL
 
 from bluelog.models import Category
@@ -27,6 +28,7 @@ class SettingForm(FlaskForm):
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired(), Length(1, 60)])
     category = SelectField('Category', coerce=int, default=1)
+    time = DateField('Time', validators=[DataRequired()], default=datetime.date.today())
     body = CKEditorField('Body', validators=[DataRequired()])
     submit = SubmitField()
 

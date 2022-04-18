@@ -52,7 +52,8 @@ def new_post():
         title = form.title.data
         body = form.body.data
         category = Category.query.get(form.category.data)
-        post = Post(title=title, body=body, category=category)
+        timestamp = form.time.data
+        post = Post(title=title, body=body, category=category, timestamp=timestamp)
         # same with:
         # category_id = form.category.data
         # post = Post(title=title, body=body, category_id=category_id)
@@ -71,6 +72,7 @@ def edit_post(post_id):
     if form.validate_on_submit():
         post.title = form.title.data
         post.body = form.body.data
+        post.timestamp = form.time.data
         post.category = Category.query.get(form.category.data)
         db.session.commit()
         flash('Post updated.', 'success')
