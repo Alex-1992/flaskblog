@@ -14,9 +14,9 @@ fake = Faker('zh-CN')
 def fake_admin():
     admin = Admin(
         username='admin',
-        blog_title='yyf的博客',
+        blog_title='blog',
         blog_sub_title="天涯路远，见字如面",
-        name='youyangfan',
+        name='Admin',
         about='A blog made with flask'
     )
     admin.set_password('admin')

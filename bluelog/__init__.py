@@ -160,10 +160,10 @@ def register_commands(app):
             click.echo('Creating the temporary administrator account...')
             admin = Admin(
                 username=username,
-                blog_title='Bluelog',
-                blog_sub_title="No, I'm the real thing.",
+                blog_title='blog',
+                blog_sub_title="天涯路远，见字如面",
                 name='Admin',
-                about='Anything about you.'
+                about='A blog made with flask'
             )
             admin.set_password(password)
             db.session.add(admin)
