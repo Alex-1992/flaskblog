@@ -48,12 +48,12 @@ class CategoryForm(FlaskForm):
 
 
 class CommentForm(FlaskForm):
-    author = StringField('名字 *', validators=[DataRequired(), Length(1, 30)])
+    author = StringField('名字 *', validators=[DataRequired(), Length(1, 30)], render_kw={'placeholder': '必填'})
     # email = StringField('Email*', validators=[DataRequired(), Email(), Length(1, 254)])
-    email = StringField('邮箱 (如果你的评论被回复，将会有提醒邮件发送到此邮箱)'
-                        , validators=[Optional(), Email(), Length(0, 254)], default='')
-    site = StringField('个人网站', validators=[Optional(), URL(), Length(0, 255)])
-    body = TextAreaField('评论内容 *', validators=[DataRequired()])
+    email = StringField('邮箱', validators=[Optional(), Email(), Length(0, 254)], default='',
+                        render_kw={'placeholder': '选填 如果你的评论被回复，将会有提醒邮件发送到此邮箱'})
+    site = StringField('个人网站', validators=[Optional(), URL(), Length(0, 255)], render_kw={'placeholder': '选填 '})
+    body = TextAreaField('评论内容 *', validators=[DataRequired()], render_kw={'placeholder': '必填'})
     submit = SubmitField('提交')
 
 

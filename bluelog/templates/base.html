@@ -22,8 +22,8 @@
                     {{ render_nav_item('blog.index', '主页') }}&emsp;
                     {{ render_nav_item('blog.about', '关于') }}&emsp;
                 </ul>
-                <h>{{ admin.blog_title|default('yyf的博客') }}</h>
-                <h class="text-muted">&nbsp;{{ admin.blog_sub_title|default('天涯路远，见字如面') }}</h>
+                <h class="text-muted">{{ admin.blog_title|default('yyf的博客') }}</h>
+                <h class="text-muted" style="margin-right: 20%">&nbsp;{{ admin.blog_sub_title|default('天涯路远，见字如面') }}</h>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_authenticated %}
                         <li class="nav-item dropdown">
