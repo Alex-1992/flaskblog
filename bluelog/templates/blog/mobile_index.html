@@ -1,0 +1,92 @@
+{% extends '/blog/index.html' %}
+{% from 'bootstrap/pagination.html' import render_pager %}
+{% from 'bootstrap/pagination.html' import render_pagination %}
+
+{#{% block title %}Home{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="row">#}
+{#        <div class="col-sm-8">#}
+{#            {% include 'blog/_posts.html' %}#}
+{#            {% if posts %}#}
+{#                <div class="page-footer" >{{ render_pager(pagination,prev='<<上一页',next='下一页>>') }}</div>#}
+{#            {% endif %}#}
+{#        </div>#}
+{#        <div class="col-sm-4 sidebar">#}
+{#            {% include 'blog/_sidebar.html' %}#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+{% block nav %}
+    {#    <script>#}
+    {#        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {#}
+    {#            alert('!!!!')#}
+    {#            #}
+    {#        }#}
+    {#    </script>#}
+
+    <nav class="navbar navbar-expand-lg change-color bg-primary">
+        <div class="container" style="display: flex">
+            <div class="navbar-nav mr-auto" style="display: contents">
+                {{ render_nav_item('blog.index', '主页') }}&emsp;
+                {{ render_nav_item('blog.about', '关于') }}&emsp;
+                <div>
+                    <h class="text-muted">{{ admin.blog_title|default('yyf的博客') }}</h>
+                    <h class="text-muted">&nbsp;{{ admin.blog_sub_title|default('天涯路远，见字如面') }}</h>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if current_user.is_authenticated %}
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    新建 <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url_for('admin.new_post') }}">文章</a>
+                                    <a class="dropdown-item" href="{{ url_for('admin.new_category') }}">标签</a>
+                                    <a class="dropdown-item" href="{{ url_for('admin.new_link') }}">链接</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false">
+                                    管理 <span class="caret"></span>
+                                    {% if unread_comments %}
+                                        <span class="badge badge-success">new</span>
+                                    {% endif %}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url_for('admin.manage_post') }}">文章</a>
+                                    <a class="dropdown-item" href="{{ url_for('admin.manage_category') }}">标签</a>
+                                    <a class="dropdown-item" href="{{ url_for('admin.manage_comment') }}">
+                                        评论
+                                        {% if unread_comments %}
+                                            <span class="badge badge-success">{{ unread_comments }}</span>
+                                        {% endif %}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ url_for('admin.manage_link') }}">链接</a>
+                                </div>
+                            </li>
+                            {{ render_nav_item('admin.settings', '设置') }}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+{% endblock nav %}
+{% block footer %}
+    <div class="bottom-block">
+        <hr class="hr-solid-content" style="padding-bottom: 1.5%;" data-content="到底了">
+    </div>
+    <div class="icp-link" style="margin-top: 1.2%;">
+        <a href="https://beian.miit.gov.cn">陕ICP备2020004273号</a>&nbsp;
+{#        {% if current_user.is_authenticated %}#}
+{#            <a href="{{ url_for('auth.logout', next=request.full_path) }}">登出</a>#}
+{#        {% else %}#}
+{#            <a href="{{ url_for('auth.login', next=request.full_path) }}">登录</a>#}
+{#        {% endif %}#}
+    </div>
+
+{% endblock %}

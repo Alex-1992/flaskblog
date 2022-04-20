@@ -15,6 +15,15 @@ blog_bp = Blueprint('blog', __name__)
 @blog_bp.route('/')
 def index():
     page = request.args.get('page', 1, type=int)
+    word_list = ['Mobi', 'Android', 'iPhone']
+    if any(word in str(request.user_agent) for word in word_list):
+        # 表示用手机访问
+        flash('您正在使用移动端访问，网页访问可获得更好的体验', 'info')
+        per_page = current_app.config['BLUELOG_POST_PER_PAGE_MOBILE']
+        pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
+        posts = pagination.items
+        return render_template('blog/mobile_index.html', pagination=pagination, posts=posts)
+
     per_page = current_app.config['BLUELOG_POST_PER_PAGE']
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
     posts = pagination.items
@@ -97,7 +106,6 @@ def reply_comment(comment_id):
         return redirect(url_for('.show_post', post_id=comment.post.id))
     return redirect(
         url_for('.show_post', post_id=comment.post_id, reply=comment_id, author=comment.author) + '#comment-form')
-
 
 # @blog_bp.route('/change-theme/<theme_name>')
 # def change_theme(theme_name):

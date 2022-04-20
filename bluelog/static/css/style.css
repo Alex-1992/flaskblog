@@ -3,7 +3,7 @@ nav {
     padding-top: 0.5% !important;
     padding-bottom: 0.5% !important;
     line-height: normal;
-    font-size: larger;
+    font-size: medium;
 
 }
 
@@ -74,7 +74,7 @@ hr.post_spliter {
 
 .hr-solid-content {
     padding-top: 1.5% !important;
-    padding-bottom: 1% !important;
+    padding-bottom: 1%;
     margin-bottom: 0 !important;
     /*color: #a2a9b6;*/
     color: #6495ed;
@@ -130,6 +130,7 @@ hr.post_spliter {
 
 .change-color {
     background: black linear-gradient(to right, black, #333, black);
+    min-height: max-content;
 }
 
 * {
@@ -137,7 +138,7 @@ hr.post_spliter {
     word-spacing: 0.15rem !important;
 }
 
-.nav-link{
+.nav-link {
     color: whitesmoke !important;
 }
 
@@ -145,11 +146,35 @@ hr.post_spliter {
     color: #37ede0 !important;
 }
 
-.col-sm-8{
+.col-sm-8 {
     min-height: 50rem;
 }
 
-.icp-link{
+.icp-link {
+
     text-align: center;
     font-size: 12px;
+}
+
+/*@media screen and (min-width: 375px) {*/
+/*    .change-color {*/
+/*        !* 375px作为16px基准，414px宽度时正好对应18px的根字号大小 *!*/
+/*        font-size: calc(16px + 2 * (100vw - 375px) / 39);*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 414px) {*/
+/*    .change-color  {*/
+/*        !* 屏幕宽度从414px到1000px，根字号大小累积增加4px（18px-22px） *!*/
+/*        font-size: calc(18px + 4 * (100vw - 414px) / 586);*/
+/*    }*/
+/*}*/
+/*@media screen and (min-width: 1000px) {*/
+/*    .change-color  {*/
+/*        !* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px *!*/
+/*        font-size: calc(22px + 5 * (100vw - 1000px) / 1000);*/
+/*    }*/
+/*}*/
+
+h4.text-primary {
+    font-size: 1.2rem;
 }
