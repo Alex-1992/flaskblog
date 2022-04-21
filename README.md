@@ -3,10 +3,15 @@
 
 样例：[youyangfan.work](http://124.221.180.146/)
 
-博客头部：
+### 预览：
+*博客头部：*
 ![img.png](uploads/img.png)
-博客底部：
+
+*博客底部：*
 ![img_1.png](uploads/img_1.png)
+
+*支持markdown格式：*
+![img_2.png](uploads/img_2.png)
 ## 此文分为安装和部署两部分
 ### 1.安装：
 clone:

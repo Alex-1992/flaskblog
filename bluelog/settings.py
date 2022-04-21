@@ -21,6 +21,8 @@ class BaseConfig(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
 
+    # CKEDITOR_EXTRA_PLUGINS = 'markdown'
+    # CKEDITOR_ENABLE_MARKDOWN = True
     CKEDITOR_ENABLE_CSRF = True
     CKEDITOR_FILE_UPLOADER = 'admin.upload_image'
 
