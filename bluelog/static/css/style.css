@@ -62,6 +62,12 @@ footer {
     margin-top: 3%;
 }
 
+.per-post{
+    overflow: hidden;
+    min-height: 0;!important;
+    max-height: 20rem;
+}
+
 a:hover {
     color: #37ede0
 }
@@ -178,3 +184,4 @@ hr.post_spliter {
 h4.text-primary {
     font-size: 1.2rem;
 }
+

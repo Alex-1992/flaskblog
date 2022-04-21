@@ -1,24 +1,34 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/github.min.css') }}">
+<script src="{{ url_for('static', filename='js/highlight.min.js') }}"></script>
+<script>hljs.highlightAll();</script>
 {% if posts %}
     {% for post in posts %}
-{#        {%  if loop.first %}#}
-{#            <hr class="post_spliter">#}
-{#        {% endif %}#}
-        <h4 class="text-primary"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a></h4>
-        <p>
-            {{ post.body|striptags|truncate }}
-            <small><a href="{{ url_for('.show_post', post_id=post.id) }}">更多</a></small>
-        </p>
+        {#        {%  if loop.first %}#}
+        {#            <hr class="post_spliter">#}
+        {#        {% endif %}#}
+
+        <h4 class="text-primary per-post"><a href="{{ url_for('.show_post', post_id=post.id) }}">{{ post.title }}</a>
+        </h4>
+
+
+        <div class="per-post">
+            <p>
+                {#            {{ post.body|safe|truncate(200,False,'......',0) }}#}
+                {{ post.body|safe }}
+            </p>
+        </div>
+        <br>
         <small>
+{#            <a href="{{ url_for('.show_post', post_id=post.id) }}">更多</a>&emsp;#}
             评论: <a href="{{ url_for('.show_post', post_id=post.id) }}#comments">{{ post.comments|length }}</a>&nbsp;&nbsp;
-            标签: <a
-                href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a>
-{#          <span class="float-right">{{ moment(post.timestamp).format('LL') }}</span>#}
+            标签: <a href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a>
             <span class="float-right">{{ post.timestamp.strftime("%Y年%m月%d日") }}</span>
         </small>
         {% if not loop.last %}
-{#            <hr color="cornflowerblue">#}
+            {#            <hr color="cornflowerblue">#}
             <hr class="post_spliter">
         {% endif %}
+
     {% endfor %}
 {% else %}
     <div class="tip">
