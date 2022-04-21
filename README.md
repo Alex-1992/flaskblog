@@ -10,7 +10,7 @@
 *博客底部：*
 ![img_1.png](uploads/img_1.png)
 
-*支持markdown格式：*
+*文章详情界面，支持markdown格式：*
 ![img_2.png](uploads/img_2.png)
 ## 此文分为安装和部署两部分
 ### 1.安装：
