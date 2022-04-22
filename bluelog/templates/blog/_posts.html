@@ -18,12 +18,18 @@
             </p>
         </div>
         <br>
-        <small>
-{#            <a href="{{ url_for('.show_post', post_id=post.id) }}">更多</a>&emsp;#}
+        <small style="float: left">
+            <a href="{{ url_for('.show_post', post_id=post.id) }}">查看文章</a>&emsp;
             评论: <a href="{{ url_for('.show_post', post_id=post.id) }}#comments">{{ post.comments|length }}</a>&nbsp;&nbsp;
             标签: <a href="{{ url_for('.show_category', category_id=post.category.id) }}">{{ post.category.name }}</a>
-            <span class="float-right">{{ post.timestamp.strftime("%Y年%m月%d日") }}</span>
+
         </small>
+        <small style="float: right">
+            <span>
+                {{ post.timestamp.strftime("%Y年%m月%d日") }}
+            </span>
+        </small>
+        <br>
         {% if not loop.last %}
             {#            <hr color="cornflowerblue">#}
             <hr class="post_spliter">

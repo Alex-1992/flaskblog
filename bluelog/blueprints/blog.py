@@ -15,15 +15,6 @@ blog_bp = Blueprint('blog', __name__)
 @blog_bp.route('/')
 def index():
     page = request.args.get('page', 1, type=int)
-    word_list = ['Mobi', 'Android', 'iPhone']
-    if any(word in str(request.user_agent) for word in word_list):
-        # 表示用手机访问
-        flash('您正在使用移动端访问，网页访问可获得更好的体验', 'info')
-        per_page = current_app.config['BLUELOG_POST_PER_PAGE_MOBILE']
-        pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
-        posts = pagination.items
-        return render_template('blog/mobile_index.html', pagination=pagination, posts=posts)
-
     per_page = current_app.config['BLUELOG_POST_PER_PAGE']
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(page, per_page=per_page)
     posts = pagination.items
@@ -33,11 +24,6 @@ def index():
 @blog_bp.route('/about')
 def about():
     return render_template('blog/about.html')
-
-
-# @blog_bp.route('/github')
-# def github():
-#     return redirect("https://github.com/Alex-1992")
 
 
 @blog_bp.route('/category/<int:category_id>')
@@ -57,7 +43,7 @@ def show_post(post_id):
     per_page = current_app.config['BLUELOG_COMMENT_PER_PAGE']
     # pagination = Comment.query.with_parent(post).filter_by(reviewed=True).order_by(Comment.timestamp.asc()).paginate(
     #     page, per_page)
-    # 在这里评论直接显示
+    # 有新评论管理员会有提醒 但评论直接显示
     pagination = Comment.query.with_parent(post).order_by(Comment.timestamp.asc()).paginate(
         page, per_page)
     comments = pagination.items
@@ -77,10 +63,10 @@ def show_post(post_id):
     if form.validate_on_submit():
         author = form.author.data
         email = form.email.data
-        site = form.site.data
+        # site = form.site.data
         body = form.body.data
         comment = Comment(
-            author=author, email=email, site=site, body=body,
+            author=author, email=email, body=body,
             from_admin=from_admin, post=post, reviewed=reviewed)
         replied_id = request.args.get('reply')
         if replied_id:

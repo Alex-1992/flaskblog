@@ -1,5 +1,5 @@
 # flaskblog
-*使用flask搭建的个人博客并使用docker部署*
+*使用flask搭建的个人博客并使用docker部署，支持markdown语法，适配手机端。*
 
 样例：[youyangfan.work](http://124.221.180.146/)
 

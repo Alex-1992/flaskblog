@@ -14,17 +14,32 @@
     {% endblock head %}
 </head>
 <body>
+<div id="topAnchor"></div>
 {% block nav %}
-
-    <nav class="navbar navbar-expand-lg change-color bg-primary">
+    <nav class="navbar navbar-expand-lg change-color bg-primary" style="display: flex;justify-content: space-around;">
         <div class="container">
-{#                        <div class="collapse navbar-collapse" id="navbarColor01">#}
-            <ul class="navbar-nav mr-auto">
-                {{ render_nav_item('blog.index', '主页') }}&emsp;
-                {{ render_nav_item('blog.about', '关于') }}&emsp;
-            </ul>
-            <h class="text-muted">{{ admin.blog_title|default('yyf的博客') }}</h>
-            <h class="text-muted" style="margin-right: 20%">&nbsp;{{ admin.blog_sub_title|default('天涯路远，见字如面') }}</h>
+            <div class="navbar-nav mr-auto" style="display: contents">
+                {{ render_nav_item('blog.index', '主页') }}
+                {{ render_nav_item('blog.about', '关于') }}
+                <h class="text-muted">{{ admin.blog_sub_title|default('天涯路远，见字如面') }}</h>
+                <script>
+                    if (!(/Mobi|Android|iPhone/i.test(navigator.userAgent))) {
+                        //手机端屏幕小，导航条中不显示博客blog_title
+                        document.write("<h class='text-muted'>{{ admin.blog_title|default('yyf的博客') }}</h>")
+                    }
+                </script>
+                {% if current_user.is_authenticated %}
+                    <a style="color: whitesmoke" href="{{ url_for('auth.logout', next=request.full_path) }}">登出</a>
+                {% else %}
+                    <a style="color: whitesmoke" href="{{ url_for('auth.login', next=request.full_path) }}">登录</a>
+                {% endif %}
+            </div>
+
+
+        </div>
+        <div>
+
+
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
                     <li class="nav-item dropdown">
@@ -63,13 +78,7 @@
                     {{ render_nav_item('admin.settings', '设置') }}
                 {% endif %}
             </ul>
-            <div>{% if current_user.is_authenticated %}
-                <a style="color: whitesmoke" href="{{ url_for('auth.logout', next=request.full_path) }}">登出</a>
-            {% else %}
-                <a style="color: whitesmoke" href="{{ url_for('auth.login', next=request.full_path) }}">登录</a>
-            {% endif %}
-            </div>
-        </div>
+
         </div>
     </nav>
 {% endblock nav %}
@@ -86,9 +95,23 @@
 </main>
 </body>
 {% block footer %}
-    <div class="bottom-block">
-        <hr class="hr-solid-content" data-content="到底了">
-    </div>
+    <nav>
+        <div class="change-color nav-link"
+             style="min-height: 5%; display: flex; justify-content: space-around;padding-top: 0.5%;padding-bottom: 0.5%">
+            <a href="#topAnchor" style="color: whitesmoke">返回顶部↑</a>
+            <a href="https://beian.miit.gov.cn" style="color: #999 !important;">陕ICP备2020004273号</a>
+            <h class='text-muted'> </h>
+
+
+        </div>
+    </nav>
+    {#    <div class="bottom-block">#}
+    {#        <hr class="hr-solid-content" data-content="陕ICP备2020004273号" >#}
+    {#    </div>#}
+
+    {#    <div class="icp-link">#}
+    {#        <a href="https://beian.miit.gov.cn">陕ICP备2020004273号</a>
+{#    </div>#}
 {% endblock footer %}
 
 {% block scripts %}

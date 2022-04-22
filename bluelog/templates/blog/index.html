@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% from 'bootstrap/pagination.html' import render_pager %}
-{% from 'bootstrap/pagination.html' import render_pagination %}
+{#{% from 'bootstrap/pagination.html' import render_pagination %}#}
 
 {% block title %}Home{% endblock %}
 
@@ -18,10 +18,4 @@
     </div>
 {% endblock %}
 
-{% block footer %}
-    {{ super() }}
-    <div class="icp-link">
-        <a href="https://beian.miit.gov.cn">陕ICP备2020004273号</a>
-    </div>
 
-{% endblock %}

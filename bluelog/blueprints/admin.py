@@ -80,6 +80,7 @@ def edit_post(post_id):
     form.title.data = post.title
     form.body.data = post.body
     form.category.data = post.category_id
+    form.time.data = post.timestamp
     return render_template('admin/edit_post.html', form=form)
 
 

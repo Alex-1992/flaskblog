@@ -1,7 +1,7 @@
 nav {
 
-    padding-top: 0.5% !important;
-    padding-bottom: 0.5% !important;
+    padding-top: 0.3% !important;
+    padding-bottom: 0.3% !important;
     line-height: normal;
     font-size: medium;
 
@@ -70,7 +70,8 @@ footer {
 }
 
 a:hover {
-    color: #37ede0
+    color: #37ede0 !important;
+    text-decoration: none;
 }
 
 
@@ -79,39 +80,43 @@ hr.post_spliter {
     /*background-color: whitesmoke;*/
 }
 
-.hr-solid-content {
-    padding-top: 1.5% !important;
-    padding-bottom: 1%;
-    margin-bottom: 0 !important;
-    /*color: #a2a9b6;*/
-    color: #6495ed;
-    border: 0;
-    font-size: 12px;
-    /*padding: 1em 0;*/
-    position: relative;
-    width: 80%;
-    overflow: hidden;
-
-    height: 1px;
+.alert-dark {
+    background-color: #515151;
 }
 
-.hr-solid-content::before {
-    content: attr(data-content);
-    position: absolute;
-    padding: 0 1ch;
-    line-height: 1px;
-    border: solid #6495ed;
-    border-width: 0 99vw;
-    width: fit-content;
-    /* for IE浏览器 */
-    white-space: nowrap;
-    left: 50%;
-    transform: translateX(-50%);
-}
+/*.hr-solid-content {*/
+/*    padding-top: 1.5% !important;*/
+/*    padding-bottom: 1.1%;*/
+/*    margin-bottom: 0 !important;*/
+/*    !*color: #a2a9b6;*!*/
+/*    color: #6495ed;*/
+/*    border: 0;*/
+/*    font-size: 12px;*/
+/*    !*padding: 1em 0;*!*/
+/*    position: relative;*/
+/*    width: 80%;*/
+/*    overflow: hidden;*/
+
+/*    height: 1px;*/
+/*}*/
+
+/*.hr-solid-content::before {*/
+/*    content: attr(data-content);*/
+/*    position: absolute;*/
+/*    padding: 0 1ch;*/
+/*    line-height: 1px;*/
+/*    border: solid #6495ed;*/
+/*    border-width: 0 99vw;*/
+/*    width: fit-content;*/
+/*    !* for IE浏览器 *!*/
+/*    white-space: nowrap;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*}*/
 
 .page-link:hover {
     text-decoration: none;
-    background-color: #37ede0 !important;
+    background-color: #466eff !important
 }
 
 .page-link {
@@ -136,7 +141,7 @@ hr.post_spliter {
 
 
 .change-color {
-    background: black linear-gradient(to right, black, #333, black);
+    background: black linear-gradient(to right, black, #333,black);
     min-height: max-content;
 }
 
@@ -147,6 +152,7 @@ hr.post_spliter {
 
 .nav-link {
     color: whitesmoke !important;
+    /*margin-left: 6%*/
 }
 
 .nav-link:hover {
@@ -159,8 +165,9 @@ hr.post_spliter {
 
 .icp-link {
 
-    text-align: center;
+    text-align: right;
     font-size: 12px;
+    color: whitesmoke;
 }
 
 /*@media screen and (min-width: 375px) {*/
@@ -202,6 +209,7 @@ h4.text-primary {
 -------------------- */
 #markdown{
     color: lightslategrey;
+    line-height: 2;
 }
 
 #markdown h1, #markdown h2, #markdown h3 {
@@ -237,7 +245,7 @@ h4.text-primary {
 -------------------- */
 
 #markdown p {
-    margin: 12px 0;
+    /*margin: 12px 0;*/
     color:lightgrey ;
 }
 
@@ -249,18 +257,6 @@ h4.text-primary {
     background-color: #000000;
 }
 
-/* Horizontal Rule
--------------------- */
-
-#markdown hr {
-    height: 2px;
-    margin: 16px 0;
-    border: none;
-    background-color: #ccc;
-}
-
-/* Cites
--------------------- */
 
 #markdown blockquote {
     border-left: 4px solid #0eaeec;
