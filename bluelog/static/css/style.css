@@ -197,7 +197,12 @@ hr.post_spliter {
 h4.text-primary {
     font-size: 1.2rem;
 }
-
+th{
+    color: black;
+}
+td{
+    color: black;
+}
 
 #markdown {
     font-family: sans-serif;
@@ -225,7 +230,6 @@ h4.text-primary {
 #markdown h2 {
     margin: 16px 0;
     padding-bottom: 8px;
-    border-bottom: 1px solid #ddd;
     color: whitesmoke;
 }
 
@@ -290,6 +294,7 @@ h4.text-primary {
 -------------------- */
 
 #markdown pre code {
+    max-width: 710px;
     display: block;
     padding: 16px 20px;
     border: 1px solid #ddd;
