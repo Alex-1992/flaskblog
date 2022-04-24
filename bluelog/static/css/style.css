@@ -147,7 +147,7 @@ hr.post_spliter {
 
 * {
     letter-spacing: 0.05rem;
-    word-spacing: 0.15rem !important;
+    /*word-spacing: 0.15rem !important;*/
 }
 
 .nav-link {
@@ -266,7 +266,7 @@ td{
     border-left: 4px solid #0eaeec;
     padding: 10px 15px;
     color: #666;
-    background-color: #dbf3fd;
+    background-color: #005f86;
 }
 
 /* Table
