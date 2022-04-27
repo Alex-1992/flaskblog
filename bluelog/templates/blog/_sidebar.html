@@ -1,3 +1,26 @@
+{% if categories %}
+    <div class="card mb-3">
+        <div class="card-header">标签</div>
+        <ul class="list-group list-group-flush">
+            <ul class="cloud" role="navigation" aria-label="Webdev tag cloud">
+                {% for category in categories %}
+                    <li>
+                        <a href="{{ url_for('blog.show_category', category_id=category.id) }}"
+                           style="font-size: {{ category.posts|length *0.2 + 0.2 }}rem">{{ category.name }}({{ category.posts|length }})</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% for category in categories %}
+                <li class="list-group-item  list-group-item-action d-flex justify-content-between align-items-center">
+                    <a href="{{ url_for('blog.show_category', category_id=category.id) }}">
+                        {{ category.name }}
+                    </a>
+                    <span class="badge badge-primary badge-pill"> {{ category.posts|length }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
 {% if links %}
     <div class="card mb-3">
         <div class="card-header">链接</div>
@@ -10,20 +33,3 @@
         </ul>
     </div>
 {% endif %}
-
-{% if categories %}
-    <div class="card mb-3">
-        <div class="card-header">标签</div>
-        <ul class="list-group list-group-flush">
-            {% for category in categories %}
-                <li class="list-group-item  list-group-item-action d-flex justify-content-between align-items-center">
-                    <a href="{{ url_for('blog.show_category', category_id=category.id) }}">
-                        {{ category.name }}
-                    </a>
-                    <span class="badge badge-primary badge-pill"> {{ category.posts|length }}</span>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-{% endif %}
-</div>

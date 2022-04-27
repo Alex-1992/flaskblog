@@ -141,7 +141,7 @@ hr.post_spliter {
 
 
 .change-color {
-    background: black linear-gradient(to right, black, #333,black);
+    background: black linear-gradient(to right, black, #333, black);
     min-height: max-content;
 }
 
@@ -197,10 +197,12 @@ hr.post_spliter {
 h4.text-primary {
     font-size: 1.2rem;
 }
-th{
+
+th {
     color: black;
 }
-td{
+
+td {
     color: black;
 }
 
@@ -212,7 +214,7 @@ td{
 
 /* Header
 -------------------- */
-#markdown{
+#markdown {
     color: lightslategrey;
     line-height: 2;
 }
@@ -250,7 +252,7 @@ td{
 
 #markdown p {
     /*margin: 12px 0;*/
-    color:lightgrey ;
+    color: lightgrey;
 }
 
 #markdown code {
@@ -344,3 +346,67 @@ td{
     height: auto;
     margin: 16px auto;
 }
+
+ul.cloud li:nth-child(2n+1) a {
+    --color: #80ff8e;;
+}
+
+ul.cloud li:nth-child(3n+1) a {
+    --color: #7ed4ff;
+}
+
+ul.cloud li:nth-child(4n+1) a {
+    --color: #ff7ef1;
+}
+
+ul.cloud {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    line-height: 2.5rem;
+}
+
+ul.cloud a {
+    /*color: #fff57b;*/
+    color: var(--color, #fff57b);
+    display: block;
+    padding: 0.125rem 0.25rem;
+    text-decoration: none;
+    position: relative;
+}
+
+
+ul.cloud a:hover {
+    color:unset !important;
+}
+
+ul.cloud a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 100%;
+    background: var(--color, #fff57b);
+    transform: translate(-50%, 0);
+    opacity: 0.15;
+    transition: width 0.25s;
+}
+
+ul.cloud a:focus::before,
+ul.cloud a:hover::before {
+    width: 100%;
+}
+
+/*ul.cloud[data-show-value] a::after {*/
+/*  content: " (" attr(data-weight) ")";*/
+/*  font-size: 1rem;*/
+/*}*/
+
+/*ul.cloud a {*/
+/*  --size: attr(data-weight number, 2);*/
+/*  font-size: calc(var(--size) * 1rem);*/
+/*}*/
