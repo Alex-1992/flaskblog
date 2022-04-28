@@ -6,7 +6,7 @@
                 {% for category in categories %}
                     <li>
                         <a href="{{ url_for('blog.show_category', category_id=category.id) }}"
-                           style="font-size: {{ category.posts|length *0.2 + 0.2 }}rem">{{ category.name }}({{ category.posts|length }})</a>
+                           style="font-size: {{ category.posts|length *0.2 + 0.5 }}rem">{{ category.name }}({{ category.posts|length }})</a>
                     </li>
                 {% endfor %}
             </ul>
